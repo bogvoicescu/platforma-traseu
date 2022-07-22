@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import axios from 'axios';
 
 function App() {
 
@@ -8,6 +9,10 @@ function App() {
   const [country, setCountry] = useState('');
   const [position, setPosition] = useState('');
   const [wage, setWage] = useState('');
+
+const addEmployee = () =>{
+  axios.post('localhost:3001/create')
+}
 
   const displayInfo = () => {
     console.log(name + " " + age+ " " + country+ " " + position+ " " + wage);
